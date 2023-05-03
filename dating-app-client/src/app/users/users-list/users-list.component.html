@@ -1,12 +1,12 @@
-<p>users-list works!</p>
+<!-- <p>users-list works!</p>
 <h1>USERS</h1>
-<button (click)="onGotoProfileClicked()">GO TO User Profile</button>
+<button (click)="onGotoProfileClicked()">GO TO User Profile</button> -->
 
 <!-- <span *ngFor="let user of users">{{user.username}}</span> -->
 <table mat-table [dataSource]="users" class="mat-elevation-z8">
   <ng-container matColumnDef="username">
     <th mat-header-cell *matHeaderCellDef> Name </th>
-    <td mat-cell *matCellDef="let user"> {{user.username}} </td>
+    <td mat-cell *matCellDef="let user"> <a class="active-link" (click)="onGotoProfileClicked(user.id)">{{user.username}}</a> </td>
   </ng-container>
   <ng-container matColumnDef="city">
     <th mat-header-cell *matHeaderCellDef> City </th>

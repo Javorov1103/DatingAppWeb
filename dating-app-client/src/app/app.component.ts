@@ -20,5 +20,7 @@ export class AppComponent {
 
   ]
 
-  test = false;
+  public alert() {
+    alert('hello')
+  }
 }

@@ -19,12 +19,12 @@ export class UsersListComponent implements OnInit {
    }
 
   ngOnInit(): void {
-    this.usersService.getAll().subscribe((users) => {
-      this.users = users
+    this.usersService.getAll().subscribe((data) => {
+      this.users = data
     });
   }
 
-  public onGotoProfileClicked() {
-    this.router.navigate(["users", 5])
+  public onGotoProfileClicked(id: number) {
+    this.router.navigate(["users", id])
   }
 }

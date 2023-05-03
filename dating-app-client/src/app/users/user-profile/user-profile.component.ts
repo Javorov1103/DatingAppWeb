@@ -1,5 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { Router } from '@angular/router';
+import { ActivatedRoute } from '@angular/router';
 
 @Component({
   selector: 'app-user-profile',
@@ -7,10 +8,11 @@ import { Router } from '@angular/router';
   styleUrls: ['./user-profile.component.scss']
 })
 export class UserProfileComponent implements OnInit {
-
-  constructor(private router: Router) { }
+  private userId: number
+  constructor(private router: Router,private route: ActivatedRoute) { }
 
   ngOnInit(): void {
+    this.userId= parseInt(this.route.snapshot.params['id'], 10);
   }
 
   public onGotoUserslistBtnClicked() {
