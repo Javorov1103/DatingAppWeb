@@ -1,5 +1,7 @@
 import { Injectable } from "@angular/core";
 import { HttpClient } from '@angular/common/http';
+import { User } from "../models/user";
+import { Observable } from "rxjs";
 
 @Injectable()
 export class UsersService {
@@ -9,11 +11,11 @@ export class UsersService {
     }
 
     public getAll() {
-       return this.http.get<any[]>('https://localhost:5001/users')
+       return this.http.get<User[]>('https://localhost:5001/users')
     }
 
-    public getUserById() {
-
+    public getUserById(userId: number): Observable<User> {
+        return this.http.get<User>(`https://localhost:5001/users/${userId}`);
     }
 
 }

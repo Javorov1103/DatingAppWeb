@@ -1,6 +1,8 @@
 import { Component, OnInit } from '@angular/core';
 import { Router } from '@angular/router';
 import { ActivatedRoute } from '@angular/router';
+import { User } from 'src/app/models/user';
+import { UsersService } from 'src/app/services/users.service';
 
 @Component({
   selector: 'app-user-profile',
@@ -8,14 +10,30 @@ import { ActivatedRoute } from '@angular/router';
   styleUrls: ['./user-profile.component.scss']
 })
 export class UserProfileComponent implements OnInit {
-  private userId: number
-  constructor(private router: Router,private route: ActivatedRoute) { }
+  private user: User;
+
+  constructor(private router: Router,
+    private route: ActivatedRoute,
+    private usersService: UsersService) {
+
+  }
 
   ngOnInit(): void {
-    this.userId= parseInt(this.route.snapshot.params['id'], 10);
+    let userId = parseInt(this.route.snapshot.params['id'], 10);
+
+    this.usersService.getUserById(userId).subscribe((user) => {
+      this.user = user
+    })
   }
 
   public onGotoUserslistBtnClicked() {
     this.router.navigate([""])
   }
+
+  public get userProfilePhotoUrl() {
+    let photo = this.user.photos.find(p => p.isMain == true)
+
+    return photo.url
+  }
+
 }
