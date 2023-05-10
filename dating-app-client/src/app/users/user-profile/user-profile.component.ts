@@ -2,6 +2,7 @@ import { Component, OnInit } from '@angular/core';
 import { Router } from '@angular/router';
 import { ActivatedRoute } from '@angular/router';
 import { User } from 'src/app/models/user';
+import { LikesService } from 'src/app/services/likes.service';
 import { UsersService } from 'src/app/services/users.service';
 
 @Component({
@@ -10,11 +11,12 @@ import { UsersService } from 'src/app/services/users.service';
   styleUrls: ['./user-profile.component.scss']
 })
 export class UserProfileComponent implements OnInit {
-  private user: User;
+  public user: User;
 
   constructor(private router: Router,
     private route: ActivatedRoute,
-    private usersService: UsersService) {
+    private usersService: UsersService,
+    private likesSerivce: LikesService) {
 
   }
 
@@ -34,6 +36,10 @@ export class UserProfileComponent implements OnInit {
     let photo = this.user.photos.find(p => p.isMain == true)
 
     return photo.url
+  }
+
+  public likeUser() {
+    this.likesSerivce.likeUser(4,this.user.id).subscribe()
   }
 
 }

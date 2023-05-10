@@ -1,5 +1,9 @@
-.example-card {
-    //max-width: 400px;
+.gallery-card {
+    max-width: 400px;
+}
+
+.profile-image-card {
+    max-width: 400px;
 }
 
 .example-header-image {
@@ -18,4 +22,8 @@
     .gallery-container {
         width: 60%;
     }
+}
+
+.mat-card-header .mat-card-title {
+    margin-bottom: 16px;
 }

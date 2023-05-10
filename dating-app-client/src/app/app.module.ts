@@ -17,6 +17,7 @@ import {MatToolbarModule} from '@angular/material/toolbar';
 import {MatIconModule} from '@angular/material/icon';
 import {MatButtonModule} from '@angular/material/button';
 import {MatCardModule} from '@angular/material/card';
+import { LikesService } from './services/likes.service';
 
 @NgModule({
   declarations: [
@@ -39,7 +40,7 @@ import {MatCardModule} from '@angular/material/card';
     MatButtonModule,
     MatCardModule
   ],
-  providers: [UsersService],
+  providers: [UsersService, LikesService],
   bootstrap: [AppComponent]
 })
 export class AppModule { }
