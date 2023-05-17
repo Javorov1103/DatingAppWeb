@@ -10,5 +10,6 @@ export class User {
     country?: string
     city?: string
     interests?: string
+    isUserLiked?:boolean
     photos: Photo[]
 }

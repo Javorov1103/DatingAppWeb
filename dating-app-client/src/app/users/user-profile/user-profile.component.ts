@@ -23,11 +23,14 @@ export class UserProfileComponent implements OnInit {
   ngOnInit(): void {
     let userId = parseInt(this.route.snapshot.params['id'], 10);
 
+    this.loadUser(userId)
+  }
+
+  private loadUser(userId) {
     this.usersService.getUserById(userId).subscribe((user) => {
       this.user = user
     })
   }
-
   public onGotoUserslistBtnClicked() {
     this.router.navigate([""])
   }
@@ -39,7 +42,15 @@ export class UserProfileComponent implements OnInit {
   }
 
   public likeUser() {
-    this.likesSerivce.likeUser(4,this.user.id).subscribe()
+    this.likesSerivce.likeUser(4,this.user.id).subscribe(() => {
+      this.loadUser(this.user.id)
+    })
+  }
+
+  public unlikeUser() {
+    this.likesSerivce.deleteLike(4,this.user.id).subscribe(() => {
+      this.loadUser(this.user.id)
+    })
   }
 
 }
