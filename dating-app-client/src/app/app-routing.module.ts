@@ -4,6 +4,7 @@ import { UsersListComponent } from './users/users-list/users-list.component';
 import { UserProfileComponent } from './users/user-profile/user-profile.component';
 
 const routes: Routes = [
+  
   {
     path: "",
     component: UsersListComponent

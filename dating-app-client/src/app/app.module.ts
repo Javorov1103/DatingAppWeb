@@ -18,6 +18,7 @@ import {MatIconModule} from '@angular/material/icon';
 import {MatButtonModule} from '@angular/material/button';
 import {MatCardModule} from '@angular/material/card';
 import { LikesService } from './services/likes.service';
+import { LoginComponent } from './components/core/login/login.component';
 
 @NgModule({
   declarations: [
@@ -26,7 +27,8 @@ import { LikesService } from './services/likes.service';
     UserProfileComponent,
     FirstDummyComponent,
     SecondDummyComponent,
-    ThirdDummyComponent
+    ThirdDummyComponent,
+    LoginComponent
   ],
   imports: [
     BrowserModule,
