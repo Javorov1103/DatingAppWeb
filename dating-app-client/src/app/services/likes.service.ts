@@ -1,13 +1,14 @@
 import { Injectable } from "@angular/core";
 import { HttpClient, HttpParams } from '@angular/common/http';
 import { Observable } from "rxjs";
+import { Config } from "../config";
 
 @Injectable()
 export class LikesService {
 
    
 
-    constructor(private http: HttpClient){
+    constructor(private http: HttpClient, private Config: Config){
 
     }
 
@@ -15,7 +16,7 @@ export class LikesService {
 
         let like = { likerId, likeeId}
 
-        return this.http.post(`https://localhost:5001/likes`,like)
+        return this.http.post(Config.getEnvVariable('likesUrl'),like)
     }
 
     public deleteLike(likerId: number, likeeId: number): Observable<any> {
@@ -23,7 +24,7 @@ export class LikesService {
         params = params.append('likerId', likerId.toString())
         params = params.append('likeeId', likeeId.toString())
 
-      return this.http.delete(`https://localhost:5001/likes`,{params: params})
+      return this.http.delete(Config.getEnvVariable('likesUrl'),{params: params})
     }
 
 }

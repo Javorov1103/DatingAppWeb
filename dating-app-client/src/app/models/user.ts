@@ -12,4 +12,15 @@ export class User {
     interests?: string
     isUserLiked?:boolean
     photos: Photo[]
+    token?: string
+    password?: string
+
+    /**
+     *
+     */
+    constructor(id: number ,username: string,  token: string) {
+        this.id = id
+        this.username = username;
+        this.token = token
+    }
 }
