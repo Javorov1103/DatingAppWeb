@@ -27,8 +27,6 @@ export class AuthService {
     this.http.post(this.loginUrl, loginModel)
     .subscribe(
         (userData: any) => {
-            
-            
             this._signedInUser = new User(
                 userData.id,
                 userData.username,

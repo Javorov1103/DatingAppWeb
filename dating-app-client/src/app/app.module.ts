@@ -19,7 +19,7 @@ import {MatButtonModule} from '@angular/material/button';
 import {MatCardModule} from '@angular/material/card';
 import {MatCheckboxModule} from '@angular/material/checkbox';
 import {MatFormFieldModule} from '@angular/material/form-field';
-import { FormsModule, ReactiveFormsModule } from '@angular/forms';
+import { FormsModule } from '@angular/forms';
 import { LikesService } from './services/likes.service';
 import { LoginComponent } from './components/core/login/login.component';
 import {MatInputModule} from '@angular/material/input'
@@ -48,7 +48,6 @@ import {MatInputModule} from '@angular/material/input'
     MatCheckboxModule,
     MatFormFieldModule,
     FormsModule,
-    ReactiveFormsModule,
     MatInputModule
   ],
   providers: [UsersService, LikesService],
