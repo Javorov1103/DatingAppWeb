@@ -17,9 +17,11 @@ import {MatToolbarModule} from '@angular/material/toolbar';
 import {MatIconModule} from '@angular/material/icon';
 import {MatButtonModule} from '@angular/material/button';
 import {MatCardModule} from '@angular/material/card';
+import {MatCheckboxModule} from '@angular/material/checkbox';
+import {MatFormFieldModule} from '@angular/material/form-field';
+import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 import { LikesService } from './services/likes.service';
 import { LoginComponent } from './components/core/login/login.component';
-import { ReactiveFormsModule } from '@angular/forms';
 import {MatInputModule} from '@angular/material/input'
 
 @NgModule({
@@ -43,6 +45,9 @@ import {MatInputModule} from '@angular/material/input'
     MatIconModule,
     MatButtonModule,
     MatCardModule,
+    MatCheckboxModule,
+    MatFormFieldModule,
+    FormsModule,
     ReactiveFormsModule,
     MatInputModule
   ],

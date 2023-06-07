@@ -21,12 +21,9 @@ export class Config {
 
     public static getVariable(value: string) {
         const data: any = {
-            CookiesNames_CompanyId: 'PT_CompanyId',
-            CookiesNames_CompanyName: 'PT_CompanyName',
             CookiesNames_Token: 'PT_Token',
             CookiesNames_UserId: 'PT_UserId',
             CookiesNames_Name: 'PT_Name',
-            CookiesNames_RoleId: 'PT_RoleId'
         };
 
         return data[value];
