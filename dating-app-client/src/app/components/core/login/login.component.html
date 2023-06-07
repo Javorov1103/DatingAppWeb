@@ -1,1 +1,46 @@
-<p>login works!</p>
+<div class="ctrl-login-container">
+    <div class="ctrl-login uix-fullscreen-container-xs">
+        
+        <mat-card>
+
+            <mat-progress-bar *ngIf="isLoggingIn" [mode]="'indeterminate'" color="primary" class="uix-progress-bar-top">
+            </mat-progress-bar>
+            <form [formGroup]="loginForm" (ngSubmit)="onSubmit()" class="form-signin">
+                <div class="uix-form-row">
+                    <mat-form-field>
+                        <span matPrefix>
+                            <i class="material-icons app-input-icon">person</i>&nbsp;
+                        </span>
+                        <input formControlName="userNumber" placeholder="UserName" matInput type="number"/>
+                    </mat-form-field>
+                </div>
+
+                <div class="uix-form-row">
+                    <mat-form-field>
+                        <span matPrefix>
+                            <i class="material-icons app-input-icon">vpn_key</i>&nbsp;
+                        </span>
+                        <input formControlName="password" matInput placeholder="Password" type="password"/>
+                    </mat-form-field>
+                </div>
+
+                <div class="uix-form-row">
+                    <mat-checkbox formControlName="rememberMe" color="primary">
+                        Remember me
+                    </mat-checkbox>
+                </div>
+                <div *ngIf="loginFailed" class="validation-summary-errors-bottom" [@fadeInOut]>
+                    {{ errInvalidLoginCredentials }}
+                </div>
+                
+                <div class="uix-form-row">
+                    <button type="submit" mat-raised-button color="primary">Login</button>
+                </div>
+<!-- 
+                <br />
+                <a routerLink="/forgotten-password/send-reset-email">Forgotten password</a>
+                <br /> -->
+            </form>
+        </mat-card>
+    </div>
+</div>

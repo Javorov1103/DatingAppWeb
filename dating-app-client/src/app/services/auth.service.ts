@@ -14,15 +14,10 @@ export class AuthService {
 
   private loginUrl = Config.getEnvVariable('loginUrl');
   private registerUrl = Config.getEnvVariable('registerUrl');
-  private sendResetPasswordEmailUrl = Config.getEnvVariable('ForgottenPassword_SendResetPasswordEmail_Url');
-  private resetPasswordUrl = Config.getEnvVariable('ForgottenPassword_ResetPassword_Url');
 
   private ptTokenCookieName = Config.getVariable('CookiesNames_Token');
-  private ptCompanyIdCookieName = Config.getVariable('CookiesNames_CompanyId');
-  private ptCompanyNameCookieName = Config.getVariable('CookiesNames_CompanyName');
   private ptUserIdCookieName = Config.getVariable('CookiesNames_UserId');
   private ptNameCookieName = Config.getVariable('CookiesNames_Name');
-  private ptUserRoleIdCookieName = Config.getVariable('CookiesNames_RoleId');
 
   constructor(private cookieService: CookieService,
     private http: HttpClient,
