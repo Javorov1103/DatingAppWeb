@@ -19,6 +19,8 @@ import {MatButtonModule} from '@angular/material/button';
 import {MatCardModule} from '@angular/material/card';
 import { LikesService } from './services/likes.service';
 import { LoginComponent } from './components/core/login/login.component';
+import { ReactiveFormsModule } from '@angular/forms';
+import {MatInputModule} from '@angular/material/input'
 
 @NgModule({
   declarations: [
@@ -40,7 +42,9 @@ import { LoginComponent } from './components/core/login/login.component';
     MatToolbarModule,
     MatIconModule,
     MatButtonModule,
-    MatCardModule
+    MatCardModule,
+    ReactiveFormsModule,
+    MatInputModule
   ],
   providers: [UsersService, LikesService],
   bootstrap: [AppComponent]
